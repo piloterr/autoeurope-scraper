@@ -10,7 +10,7 @@ uri.query = URI.encode_www_form('offer_id' => '3CD30DE2D9BE4CE8FC28E20D2702FCC7'
 request = Net::HTTP::Get.new(uri)
 request["x-api-key"] = ENV.fetch("PILOTERR_API_KEY")
 
-response = Net::HTTP.start(uri.host, uri.port, use_ssl: true, read_timeout: 60) do |http|
+response = Net::HTTP.start(uri.host, uri.port, use_ssl: true, read_timeout: 120) do |http|
   http.request(request)
 end
 
